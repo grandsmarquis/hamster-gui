@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <h3>{{ app.name }}</h3>
+    <div class="card">
+           <div class="card-content">
+             App key :
+             <b>{{ app.app_key }}</b>
+           </div>
+           <div class="card-action">
+             <a clip-copy="app.app_key">Copy to clipboard</a>
+           </div>
+         </div>
+         <br>
+         <h4 ng-show=" app.devices.length ">Your devices:</h4>
+         <ul ng-show=" app.devices.length " class="collection">
+
+           <a href="#/device/{{ device.name }}" class="collection-item" ng-repeat="device in app.devices">
+             <h5>{{ device.name }}</h5>
+           </a>
+         </ul>
+
+         <div ng-show=" app.devices.length " class="row center">
+           Or
+         </div>
+
+         <div class="row center">
+           <a href="#/devicecreate/{{ app.app_key }}" class="btn-large waves-effect waves-light orange">Create one</a>
+         </div>
+         <br>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>Create new device</h3>
+
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="name" type="text" class="validate"  ng-model="devicename">
+        <label for="name">Name</label>
+      </div>
+
+      <div class="input-field col s12">
+        <input id="datatype" type="text" class="validate"  ng-model="datatype">
+        <label for="datatype">Datatype</label>
+      </div>
+
+      <div class="input-field col s12">
+        <button ng-click="submit()" class="btn waves-effect waves-light col s12" type="submit" name="action">Create
+        </button>
+      </div>
+
+    </div>
+  </form>
+</div>

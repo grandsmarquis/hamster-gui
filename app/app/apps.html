@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+  <h3>Applications</h3>
+  </div>
+  <br>
+  <div class="row">
+<ul ng-show=" $root.apps.length " class="collection">
+  <a href="#/app/{{ app.app_key }}" class="collection-item" ng-repeat="app in $root.apps">
+    <h5>{{ app.name }}</h5>
+
+  </a>
+</ul>
+
+<div ng-show=" $root.apps.length " class="row center">
+  Or
+</div>
+
+<div class="row center">
+  <a href="#/appcreate" class="btn-large waves-effect waves-light orange">Create one</a>
+</div>
+<br>
+
+
+</div>
+
+</div>
