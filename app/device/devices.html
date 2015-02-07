@@ -1,3 +1,9 @@
 <div class="container">
   <h3>All devices</h3>
+
+  <ul ng-show=" devices.length " class="collection">
+    <a href="#/device/{{ device.app.app_key }}/{{device.device_key}}" class="collection-item" ng-repeat="device in devices">
+      <h5>{{ device.name }} in app {{ device.app.name }}</h5>
+    </a>
+  </ul>
 </div>

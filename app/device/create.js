@@ -18,8 +18,7 @@ angular.module('hamster.devicecreate', ['ngRoute'])
     $http.post(ApiService.getUrl() + 'devices.json', {"device" : {"name" : $scope.devicename, "datatype": {"temperature" : "int"}}, "token" : $rootScope.key, "app_key" : $routeParams.apptoken}).
       success(function(data, status, headers, config) {
           console.log(data);
-          //$rootScope.apps = data.apps;
-          //$location.path('/apps')
+          $location.path('/device/' + $routeParams.apptoken + '/' + data.device_key);
       }).
       error(function(data, status, headers, config) {
           console.log(data);
