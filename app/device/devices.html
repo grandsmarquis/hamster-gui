@@ -1,8 +1,14 @@
 <div class="container">
-  <h3>All devices</h3>
+  <h4>All devices</h4>
+<br/>
+  <div class="input-field ">
+        <i class="mdi-action-search prefix"></i>
+         <input ng-model="searchText" id="search" type="text" class="validate">
+         <label for="search">Search a device</label>
+  </div>
 
   <ul ng-show=" devices.length " class="collection">
-    <a href="#/device/{{ device.app.app_key }}/{{device.device_key}}" class="collection-item" ng-repeat="device in devices">
+    <a href="#/device/{{ device.app.app_key }}/{{device.device_key}}" class="collection-item" ng-repeat="device in devices | filter:searchText ">
       <h5>{{ device.name }} in app {{ device.app.name }}</h5>
     </a>
   </ul>

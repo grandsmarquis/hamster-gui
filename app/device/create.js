@@ -10,7 +10,6 @@ angular.module('hamster.devicecreate', ['ngRoute'])
 }])
 
 .controller('DeviceCreateCtrl', function($scope, $http, $rootScope, $location, $routeParams, ApiService) {
-
   $scope.submit = function() {
     console.log($scope.devicename);
     console.log($scope.datatype);

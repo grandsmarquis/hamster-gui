@@ -13,6 +13,7 @@
       "angular-cookies": "~1.2.x",
       "materialize": "master",
       "zeroclipboard" : "2.2.0",
-      "ng-clip" : "master"
+      "ng-clip" : "master",
+      "angular-google-chart" : "master"
   }
 }

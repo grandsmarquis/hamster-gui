@@ -14,7 +14,7 @@
          <h4 ng-show=" app.devices.length ">Your devices:</h4>
          <ul ng-show=" app.devices.length " class="collection">
 
-           <a href="#/device/{{ device.name }}" class="collection-item" ng-repeat="device in app.devices">
+           <a href="#/device/{{ app.app_key }}/{{ device.device_key }}" class="collection-item" ng-repeat="device in app.devices">
              <h5>{{ device.name }}</h5>
            </a>
          </ul>

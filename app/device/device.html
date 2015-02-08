@@ -1,9 +1,46 @@
 <div class="container">
 
 
-<h3>Device</h3>
-<p>
-  dskflkldsf dsjfklsd f dlskfj ds fd s fksdj fsdf lkdsjfds f
-</p>
+<h3>{{ device.name }}</h3>
+
+<div class="row ">
+  <a href="#/app/{{ appkey }}" class="btn-large waves-effect waves-light orange">See app</a>
+</div>
+
+<div class="card">
+  <div class="card-content">
+    Device key :
+    <b>{{ device.device_key }}</b>
+  </div>
+  <div class="card-action">
+    <a clip-copy="device.device_key">Copy to clipboard</a>
+  </div>
+</div>
+
+<div class="card" ng-show=" device.datatype ">
+  <div class="card-content">
+    <h5>Datas</h5>
+<table class=" striped " >
+       <thead>
+         <tr>
+             <th data-field="name">Name</th>
+             <th data-field="type">Type</th>
+         </tr>
+       </thead>
+
+       <tbody>
+         <tr ng-repeat="(key, value) in device.datatype">
+           <td>{{ key }}</td>
+           <td>{{ value }}</td>
+         </tr>
+       </tbody>
+     </table>
+</div>
+</div>
+<div class="row ">
+<div google-chart chart="chartObject" ></div>
+</div>
+
+
 
 </div>

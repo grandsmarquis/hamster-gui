@@ -5,6 +5,7 @@ var app = angular.module('myApp', [
 'ngRoute',
 'ngCookies',
 'ngClipboard',
+'googlechart',
 'myApp.view1',
 'myApp.view2',
 'hamster.signin',

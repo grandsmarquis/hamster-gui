@@ -6,8 +6,7 @@
   <div class="row">
 <ul ng-show=" $root.apps.length " class="collection">
   <a href="#/app/{{ app.app_key }}" class="collection-item" ng-repeat="app in $root.apps">
-    <h5>{{ app.name }}</h5>
-
+    <h5>{{ app.name }} <span class=" badge" ng-show=" app.devices.length ">{{app.devices.length}} device</span></h5>
   </a>
 </ul>
 

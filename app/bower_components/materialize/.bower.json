@@ -51,11 +51,11 @@
     "jquery": ">=2.1.1"
   },
   "homepage": "https://github.com/Dogfalo/materialize",
-  "_release": "40715e5128",
+  "_release": "8b3b0c2447",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "40715e51288708c9ebf6719e15bac1023421b3dc"
+    "commit": "8b3b0c2447fd5e7dfd6e6febc9898166eee36cc0"
   },
   "_source": "git://github.com/Dogfalo/materialize.git",
   "_target": "master",
