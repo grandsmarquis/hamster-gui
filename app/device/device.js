@@ -45,8 +45,11 @@ angular.module('hamster.device', ['ngRoute'])
           ], "rows": $scope.rows};
 
 
-      $scope.chartObject.type = 'LineChart';
+          $scope.chartObject.type = 'LineChart';
+          $scope.chartObject.options = {};
+          $scope.chartObject.options.explorer = {
 
+          };
 
 
       }).
