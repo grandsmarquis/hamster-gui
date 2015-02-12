@@ -8,9 +8,40 @@
         <label for="name">Name</label>
       </div>
 
-      <div class="input-field col s12">
-        <input id="datatype" type="text" class="validate"  ng-model="datatype">
-        <label for="datatype">Datatype</label>
+<br>
+<div class="col s12" >
+      <table class=" striped " >
+
+
+             <tbody>
+               <tr ng-repeat="(key, value) in datatype">
+                 <td>{{ key }}</td>
+                 <td>{{ value }}</td>
+                 <td>
+                   <a ng-click="remove(key)">Remove</a>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+<br>
+      <div class="input-field col s5">
+        <input id="name" type="text" class="validate"  ng-model="current.name">
+        <label for="name">Name</label>
+      </div>
+
+      <div class="input-field col s5">
+      <select class="browser-default" ng-model="current.type">
+        <option value="integer">Integer</option>
+        <option value="float">Float</option>
+        <option value="string">String</option>
+        <option value="boolean">Boolean</option>
+        <option value="gps">Latitude/Longitude</option>
+      </select>
+    </div>
+
+      <div class="input-field col s2">
+        <button ng-click="add()" class="btn waves-effect waves-light col s12" type="submit" name="action">Add</button>
       </div>
 
       <div class="input-field col s12">

@@ -10,6 +10,24 @@ angular.module('hamster.devicecreate', ['ngRoute'])
 }])
 
 .controller('DeviceCreateCtrl', function($scope, $http, $rootScope, $location, $routeParams, ApiService) {
+  $scope.datatype = {};
+
+  $scope.current = {};
+
+  $('select').material_select();
+
+  $scope.add = function()
+  {
+    console.log($scope.current.type);
+    $scope.datatype[$scope.current.name] = $scope.current.type;
+  };
+
+  $scope.remove = function(key)
+  {
+    console.log(key);
+    delete $scope.datatype[key];
+  };
+
   $scope.submit = function() {
     console.log($scope.devicename);
     console.log($scope.datatype);
