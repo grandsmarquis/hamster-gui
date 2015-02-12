@@ -19,7 +19,18 @@ angular.module('hamster.devicecreate', ['ngRoute'])
   $scope.add = function()
   {
     console.log($scope.current.type);
-    $scope.datatype[$scope.current.name] = $scope.current.type;
+    if (!($scope.current.name && $scope.current.type))
+    {
+      alert("Please fill both fields");
+    }
+    else if ($scope.datatype[$scope.current.name])
+    {
+      alert("key already exists");
+    }
+    else
+    {
+      $scope.datatype[$scope.current.name] = $scope.current.type;
+    }
   };
 
   $scope.remove = function(key)
@@ -32,7 +43,14 @@ angular.module('hamster.devicecreate', ['ngRoute'])
     console.log($scope.devicename);
     console.log($scope.datatype);
 
-    $http.post(ApiService.getUrl() + 'devices.json', {"device" : {"name" : $scope.devicename, "datatype": {"temperature" : "int"}}, "token" : $rootScope.key, "app_key" : $routeParams.apptoken}).
+    if (!($scope.devicename && $scope.datatype))
+    {
+      alert("Please complete all fields");
+    } else
+    {
+
+
+    $http.post(ApiService.getUrl() + 'devices.json', {"device" : {"name" : $scope.devicename, "datatype": JSON.stringify($scope.datatype)}, "token" : $rootScope.key, "app_key" : $routeParams.apptoken}).
       success(function(data, status, headers, config) {
           console.log(data);
           $location.path('/device/' + $routeParams.apptoken + '/' + data.device_key);
@@ -41,5 +59,6 @@ angular.module('hamster.devicecreate', ['ngRoute'])
           console.log(data);
       });
     };
+  }
 
 });
