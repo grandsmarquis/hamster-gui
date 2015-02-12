@@ -69,6 +69,8 @@ app.service('LoginService', function($cookieStore, $rootScope){
   };
 });
 
+
+
 app.run(function($rootScope, LoginService, $location)
 {
   $rootScope.logout = function() { LoginService.putInfo('', ''); $location.path('/login')}
