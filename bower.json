@@ -14,6 +14,7 @@
       "materialize": "master",
       "zeroclipboard" : "2.2.0",
       "ng-clip" : "master",
+      "angular-cal-heatmap-directive" : "master",
       "angular-google-chart" : "master"
 
   }

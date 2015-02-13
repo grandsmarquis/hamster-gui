@@ -50,9 +50,7 @@ console.log(data.data[0].temperature[i].from * 1000);
           $scope.chartObject.type = 'Calendar';
           $scope.chartObject.options = {title: "Pushes by days"};
           $scope.chartObject.options.explorer = {
-
           };
-
 
       }).
       error(function(data, status, headers, config) {

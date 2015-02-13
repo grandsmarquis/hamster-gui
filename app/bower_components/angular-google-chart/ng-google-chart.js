@@ -204,7 +204,7 @@
                                                 $scope.select({ selectedItem: selectedItem });
                                             }
                                             else {
-                                                $scope.onSelect({ selectedItem: selectedItem });
+                                                $scope.select({ selectedItem: selectedItem });
                                             }
                                         });
                                     });
