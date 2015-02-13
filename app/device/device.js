@@ -25,28 +25,30 @@ angular.module('hamster.device', ['ngRoute'])
     });
 
 
-    $http.get(ApiService.getUrl() + 'fetch.json?token=' + $rootScope.key + '&app_key=' + $routeParams.appkey + '&device_key=' + $routeParams.devicekey + '&value=temperature').
+    $http.get(ApiService.getUrl() + 'fetch.json?token=' + $rootScope.key + '&app_key=' + $routeParams.appkey + '&device_key=' + $routeParams.devicekey + '&groupby=day').
       success(function(data, status, headers, config) {
           console.log(data);
           $scope.temperature = data.temperature;
           $scope.chartObject = {};
 
-          var arrayLength = data.temperature.length;
+          var arrayLength = data.data[0].temperature.length;
           $scope.rows = [];
-
+          console.log("lol" + arrayLength);
           for (var i = 0; i < arrayLength; i++) {
-            console.log(data.temperature[i]);
-            $scope.rows[i] = {c : [ {v: new Date(data.temperature[i].time * 1000)}, {v:data.temperature[i].value} ]};
+console.log(data.data[0].temperature[i].from * 1000);
+
+            var date = new Date(data.data[0].temperature[i].from * 1000);
+            console.log(date);
+
+            $scope.rows[i] = {c : [ {v: new Date(date.getFullYear(), date.getMonth(), date.getDate())}, {v:data.data[0].temperature[i].data_count} ]};
           }
-
+        console.log($scope.rows);
           $scope.chartObject.data = {"cols": [
-          {id: "t", label: "Time", type: "date"},
-          {id: "s", label: "Degrees", type: "number"}
+              {id: "date", label: "Date", type: "date", p : {}},
+              {id: "pushes", label: "Pushes", type: "number", p:{}}
           ], "rows": $scope.rows};
-
-
-          $scope.chartObject.type = 'LineChart';
-          $scope.chartObject.options = {};
+          $scope.chartObject.type = 'Calendar';
+          $scope.chartObject.options = {title: "Pushes by days"};
           $scope.chartObject.options.explorer = {
 
           };
