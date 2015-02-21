@@ -1,45 +1,83 @@
 <div class="container">
 
 
-<h3>{{ device.name }}</h3>
+  <h3>{{ device.name }}</h3>
 
-<div class="row ">
-  <a href="#/app/{{ appkey }}" class="btn-large waves-effect waves-light orange">See app</a>
-</div>
-
-<div class="card">
-  <div class="card-content">
-    Device key :
-    <b>{{ device.device_key }}</b>
+  <div class="row ">
+    <a href="#/app/{{ appkey }}" class="btn-large waves-effect waves-light orange">See app</a>
   </div>
-  <div class="card-action">
-    <a clip-copy="device.device_key">Copy to clipboard</a>
+
+  <div class="card">
+    <div class="card-content">
+      Device key :
+      <b>{{ device.device_key }}</b>
+    </div>
+    <div class="card-action">
+      <a clip-copy="device.device_key">Copy to clipboard</a>
+    </div>
+  </div>
+
+  <div class="row">
+
+  <div class="card col s9" ng-show=" device.datatype ">
+
+    <div class="card-content">
+      <h5>Datas</h5>
+      <table class=" striped " >
+        <thead>
+          <tr>
+            <th data-field="name">Name</th>
+            <th data-field="type">Type</th>
+            <th data-field="type">Action</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="(key, value) in device.datatype">
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+            <td><a ng-click="selectType(key)" class="btn-large waves-effect waves-light orange">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card col s3">
+  <button ng-click="cal.previous()">previous</button>
+  <div id="cal-heatmap"/>
+  <button ng-click="cal.next()">next</button>
+</div>
+</div>
+
+  <div class="row ">
+
+
+
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <h5>{{current_device}}</h5>
   </div>
 </div>
 
-<div class="card" ng-show=" device.datatype ">
-  <div class="card-content">
-    <h5>Datas</h5>
-<table class=" striped " >
-       <thead>
-         <tr>
-             <th data-field="name">Name</th>
-             <th data-field="type">Type</th>
-         </tr>
-       </thead>
+<div class="row">
+  <nvd3-line-chart
+      data="current_day.selected_data"
+      width="600"
+      interactive="true"
+      tooltips="true"
+      height="350"
+      showXAxis="true"
+      showYAxis="true"
+      xAxisTickFormat="xAxisFormatFunction()"
+      yAxisTickFormat="yAxisFormatFunction()">
+  </nvd3-line-chart>
+</div>
 
-       <tbody>
-         <tr ng-repeat="(key, value) in device.datatype">
-           <td>{{ key }}</td>
-           <td>{{ value }}</td>
-         </tr>
-       </tbody>
-     </table>
-</div>
-</div>
-<div class="row ">
-<div google-chart chart="chartObject" style="height : 500px;"></div>
-</div>
+
 
 
 

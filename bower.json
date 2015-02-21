@@ -6,16 +6,23 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-      "angular": "1.2.x",
-      "angular-route": "1.2.x",
-      "angular-loader": "1.2.x",
-      "angular-mocks": "~1.2.x",
-      "angular-cookies": "~1.2.x",
-      "materialize": "master",
-      "zeroclipboard" : "2.2.0",
-      "ng-clip" : "master",
-      "angular-cal-heatmap-directive" : "master",
-      "angular-google-chart" : "master"
-
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "angular-cookies": "~1.2.x",
+    "materialize": "master",
+    "zeroclipboard": "2.2.0",
+    "ng-clip": "master",
+    "angular-cal-heatmap-directive": "master",
+    "angular-google-chart": "master",
+    "d3": "master",
+    "nvd3": "master",
+    "angularjs-nvd3-directives": "master",
+      "moment" : "master"  
+  },
+  "resolutions": {
+    "d3": ">= v3.0.6",
+    "nvd3": "~v1.1.15-beta"
   }
 }
