@@ -1,0 +1,19 @@
+{
+  "name": "ng-clip",
+  "main": "src/ngClip.js",
+  "dependencies": {
+    "angular": ">=1.0.4",
+    "zeroclipboard": "~2.2.0"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/asafdav/ng-clip",
+  "_release": "e3b2d7386e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e3b2d7386e4c88efed8cbe96339744ebafa1c697"
+  },
+  "_source": "git://github.com/asafdav/ng-clip.git",
+  "_target": "master",
+  "_originalSource": "ng-clip"
+}
